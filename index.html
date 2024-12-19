@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./index.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <section id="mainCard">
+      <div id="left">
+        <form id="form" action="">
+          <div class="heading">
+            <p id="heading">Mortgage Calculator</p>
+            <input id="reset" type="reset" value="Clear All" />
+          </div>
+
+          <div>
+            <label for="amount">Mortgage Amount</label>
+            <span class="amount">
+              <p class="ico">&pound;</p>
+              <input id="amount" type="number" min="1" />
+            </span>
+            <span class="errMsg"></span>
+          </div>
+
+          <div class="flex">
+            <div>
+              <label for="term">Mortgage Term</label>
+              <div class="term">
+                <input id="term" type="number"  min="1"/>
+                <p class="ico">years</p>
+              </div>
+              <span class="errMsg"></span>
+            </div>
+
+            <div>
+              <label for="rate">Interest Rate</label>
+              <div class="rate">
+                <input id="rate" type="number"  min="1"/>
+                <p class="ico">%</p>
+              </div>
+              <span class="errMsg"></span>
+            </div>
+          </div>
+
+          <div>
+            <label for="">Mortgage Type</label>
+            <div class="type">
+              <label for="repay" class="mortType">
+                <input type="radio" name="type" id="repay" />Repayment
+              </label>
+
+              <label for="only" class="mortType">
+                <input type="radio" name="type" id="only" /> Interest Only
+              </label>
+            </div>
+
+            <button id="submit">
+              <img src="./assets/images/icon-calculator.svg" alt="" />Calculate
+              Repayments
+            </button>
+          </div>
+
+          <!-- Empty results start -->
+        </form>
+      </div>
+      <div id="right">
+        <div id="empty">
+          <img src="./assets/images/illustration-empty.svg" alt="" />
+
+          <p class="head">Results shown here</p>
+
+          <p class="body">
+            Complete the form and click “calculate repayments” to see what your
+            monthly repayments would be.
+          </p>
+
+          <!-- Empty results end -->
+        </div>
+
+        <div id="result">
+          <!-- Completed results start -->
+
+          <p class="head">Your results</p>
+          <p class="body">
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click “calculate
+            repayments” again.
+          </p>
+
+          <div id="resultCard">
+            <p class="body">Your monthly repayments</p>
+            <p id="solution"></p>
+            <hr />
+            <p class="body">Total you'll repay over the term</p>
+            <p class="head"></p>
+          </div>
+
+          <!-- Completed results end -->
+        </div>
+      </div>
+    </section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
